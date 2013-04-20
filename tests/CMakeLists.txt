@@ -14,7 +14,10 @@ link_directories(${Boost_LIBRARYDIR})
 
 set(SOURCES
    orientation.cpp
-   intersection.cpp
+   has_intersection.cpp
+   contains.cpp
+   convex_hull.cpp
+>>>>>>> akoval/master
 )
 
 add_executable(cg-test ${SOURCES})
