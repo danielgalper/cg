@@ -2,7 +2,7 @@
 
 #include <stdexcept>
 #include <boost/lexical_cast.hpp>
-
+#include <boost/array.hpp>
 #include "point.h"
 
 namespace cg
@@ -24,6 +24,7 @@ namespace cg
 
    private:
       boost::array<point_2t<Scalar>, 2 > pts_;
+
    };
 
    template <class Scalar>
