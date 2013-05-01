@@ -70,6 +70,6 @@ namespace cg
                         }
                );
 
-      return contour_graham_hull(t, q);
+      return contour_graham_hull(p, q);
    }
 }
