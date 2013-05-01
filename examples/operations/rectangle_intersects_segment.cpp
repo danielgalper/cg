@@ -16,11 +16,12 @@
 using cg::point_2;
 using cg::point_2f;
 
+
 struct rectangle_intersects_segment_viewer : cg::visualization::viewer_adapter
 {
    rectangle_intersects_segment_viewer()
       : s_(point_2(-100, -100), point_2(100, 100)),
-        r_(cg::range(-50, 50), cg::range(-50, 50)),
+        r_(cg::range_d(-50, 50), cg::range_d(-50, 50)),
 	     rbutton_pressed_(false)
    {}
 

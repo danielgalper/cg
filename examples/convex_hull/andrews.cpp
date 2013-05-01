@@ -9,17 +9,15 @@
 #include <cg/io/point.h>
 
 #include <cg/primitives/point.h>
-
-#include <cg/convex_hull/Andrew.h>
-
+#include <cg/convex_hull/andrews.h>
 
 using cg::point_2f;
 using cg::point_2;
 
 
-struct Andrew_viewer : cg::visualization::viewer_adapter
+struct graham_viewer : cg::visualization::viewer_adapter
 {
-   Andrew_viewer()
+   graham_viewer()
       : ch_size_(0)
    {}
 
@@ -46,7 +44,7 @@ struct Andrew_viewer : cg::visualization::viewer_adapter
    bool on_release(const point_2f & p)
    {
       pts_.push_back(p);
-      ch_size_ = std::distance(pts_.begin(), cg::andrew_hull(pts_.begin(), pts_.end()));
+      ch_size_ = std::distance(pts_.begin(), cg::andrews(pts_.begin(), pts_.end()));
       return true;
    }
 
@@ -58,7 +56,6 @@ private:
 int main(int argc, char ** argv)
 {
    QApplication app(argc, argv);
-   Andrew_viewer viewer;
+   graham_viewer viewer;
    cg::visualization::run_viewer(&viewer, "convex hull");
 }
-
