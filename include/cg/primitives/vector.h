@@ -1,7 +1,8 @@
 #pragma once
 
 #include "range.h"
-
+#include<cmath>
+#include<cg/primitives/point.h>
 namespace cg
 {
    template <class Scalar> struct vector_2t;
@@ -13,7 +14,15 @@ namespace cg
    struct vector_2t
    {
       Scalar x, y;
+      double dist;
+      vector_2t(){}
 
+      vector_2t(Scalar x, Scalar y)
+         : x(x)
+         , y(y)
+      {
+          dist = std::sqrt(x*x + y*y);
+      }
       vector_2t<Scalar> & operator *= (Scalar s)
       {
          x *= s;
@@ -22,10 +31,7 @@ namespace cg
          return *this;
       }
 
-      vector_2t(Scalar x, Scalar y)
-         : x(x)
-         , y(y)
-      {}
+
    };
 
    template <class Scalar>

@@ -4,7 +4,7 @@
 
 #include <cg/convex_hull/graham.h>
 
-#include <cg/convex_hull/andrew.h>
+#include <cg/convex_hull/Andrew.h>
 #include <cg/convex_hull/jarvis.h>
 
 #include <cg/operations/contains/segment_point.h>
